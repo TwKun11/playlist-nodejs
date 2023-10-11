@@ -36,25 +36,44 @@
             </fieldset>
         </form> -->
     <table>
+        <!-- <%= JSON.stringify(listUsers) %> -->
         <tr>
             <th>ID</th>
             <th>Email</th>
             <th>Name</th>
             <th>City</th>
+            <th>Action</th>
 
         </tr>
-        <tr>
-            <td>Peter</td>
-            <td>Griffin</td>
-            <td>$100</td>
-            <td>$100</td>
 
-        </tr>
-        <tr>
-            <td>Lois</td>
-            <td>Griffin</td>
-            <td>$150</td>
-        </tr>
+        <% listUsers.forEach(function(Users) { %>
+            <tr>
+                <td>
+                    <%= Users.id %>
+                </td>
+                <td>
+                    <%= Users.email %>
+                </td>
+                <td>
+                    <%= Users.name %>
+                </td>
+                <td>
+                    <%= Users.city %>
+                </td>
+                <td>
+                    <a href="/update-user/<%= Users.id %>"> edit</a>
+                    <form action="/delete-user/<%= Users.id %>" method="POST">
+                        <button>delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% }); %>
+                <!-- </tr>
+            <tr>
+                <td>Lois</td>
+                <td>Griffin</td>
+                <td>$150</td>
+            </tr> -->
     </table>
 </body>
 

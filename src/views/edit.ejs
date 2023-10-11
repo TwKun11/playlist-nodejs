@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create</title>
+    <title>Update User</title>
     <link rel="stylesheet" href="/css/styles.css">
 
 </head>
@@ -11,24 +11,28 @@
 <body>
     <div class="topnav">
         <a href="/">Home</a>
-        <a href="/create" class="active">Create User</a>
+        <a href="/create">Create User</a>
 
     </div>
     <div class="form-add-new">
-        <form action="/create-user" method="post">
+        <form action="/update-user-later" method="post">
             <fieldset>
-                <legend>News</legend>
+                <legend>Update Users</legend>
+                <div class="id-group d-none">
+                    <label for="">Id</label>
+                    <input type="text" name="userId" value="<%= userEdit.id %>" />
+                </div>
                 <div class="input-group">
                     <label for="">email</label>
-                    <input type="text" name="email">
+                    <input type="text" name="email" value="<%= userEdit.email %>" />
                 </div>
                 <div class="input-group">
                     <label for="">name</label>
-                    <input type="text" name="name">
+                    <input type="text" name="name" value="<%= userEdit.name %>" />
                 </div>
                 <div class="input-group">
                     <label for="">city</label>
-                    <input type="text" name="city">
+                    <input type="text" name="city" value="<%= userEdit.city %>" />
                 </div>
                 <div class="btn">
                     <button>Save</button>
